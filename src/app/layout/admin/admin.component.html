@@ -13,17 +13,15 @@
   <div class="pcoded-container navbar-wrapper">
     <nav class="navbar header-navbar pcoded-header" [attr.pcoded-header-position]="pcodedHeaderPosition" [attr.header-theme]="headerTheme">
       <div class="navbar-wrapper">
-        <div class="navbar-logo" [attr.logo-theme]="logoTheme">
+        <!--<div class="navbar-logo" [attr.logo-theme]="logoTheme">
           <a class="mobile-menu" id="mobile-collapse" href="javascript:;" (click)="toggleOpened()" [exclude]="'#main_navbar'" (clickOutside)="onClickedOutside($event)">
             <i class="ti-menu"></i>
           </a>
-          <a [routerLink]="['/']">
-            <img class="img-fluid" src="assets/images/logo.png" alt="Theme-Logo"/>
-          </a>
+          
           <a (click)="onMobileMenu()" class="mobile-options">
             <i class="ti-more"></i>
           </a>
-        </div>
+        </div>-->
 
         <div class="navbar-container">
           <div>
@@ -47,9 +45,10 @@
                     <ul class="mega-menu-links">
                       <li><a [routerLink]="['/simple-page']">About us</a></li>
                       <li><a href='faq'>FAQ</a></li>
-                      <li><a [routerLink]="['/map/google']">Our psychologists</a></li>
+                      <li><a href='Home'>Home</a></li>
                       <li><a href='appointement'>Appointment</a></li>
-                      <li><a [routerLink]="['/user/profile']">Healthy tips</a></li>
+                      
+                    
                       <!--<li><a [routerLink]="['/authentication/lock-screen']" target="_blank">Lock Screen</a></li>-->
                     </ul>
                   </li>
@@ -104,24 +103,13 @@
                     </ul>
                   </li>
                   <li class="col-sm-3">
-                    <h6 class="mega-menu-title">Gallery</h6>
+                    <h6 class="mega-menu-title">Quote of the day</h6>
                     <div class="row m-b-20">
-                      <div class="col-sm-4"><img class="img-fluid img-thumbnail" src="assets/images/mega-menu/01.jpg" alt="Gallery-1">
+                      <div><img src="assets/images/mind.jpg" alt="Gallery-1" width="500" height="320">
                       </div>
-                      <div class="col-sm-4"><img class="img-fluid img-thumbnail" src="assets/images/mega-menu/02.jpg" alt="Gallery-2">
-                      </div>
-                      <div class="col-sm-4"><img class="img-fluid img-thumbnail" src="assets/images/mega-menu/01.jpg" alt="Gallery-3">
-                      </div>
+                      
                     </div>
-                    <div class="row m-b-20">
-                      <div class="col-sm-4"><img class="img-fluid img-thumbnail" src="assets/images/mega-menu/02.jpg" alt="Gallery-4">
-                      </div>
-                      <div class="col-sm-4"><img class="img-fluid img-thumbnail" src="assets/images/mega-menu/01.jpg" alt="Gallery-5">
-                      </div>
-                      <div class="col-sm-4"><img class="img-fluid img-thumbnail" src="assets/images/mega-menu/02.jpg" alt="Gallery-6">
-                      </div>
-                    </div>
-                    <button class="btn btn-primary btn-sm btn-block">Browse Gallery</button>
+                    
                   </li>
                   <li class="col-sm-3">
                     <h6 class="mega-menu-title">Feedback</h6>
@@ -157,33 +145,7 @@
               </li>
             </ul>
             <ul [@mobileMenuTop]="isCollapsedMobile" class="nav-right" [ngClass]="isCollapsedMobile">
-              <!--<li class="header-notification lng-dropdown">
-                <a href="javascript:;" id="dropdown-active-item">
-                  <img src="assets/images/flags/ENGLISH.jpg" alt=""> English
-                </a>
-                <ul class="show-notification">
-                  <li>
-                    <a href="javascript:;" data-lng="en">
-                      <img src="assets/images/flags/ENGLISH.jpg" alt=""> English
-                    </a>
-                  </li>
-                  <li>
-                    <a href="javascript:;" data-lng="es">
-                      <img src="assets/images/flags/SPAIN.jpg" alt=""> Spanish
-                    </a>
-                  </li>
-                  <li>
-                    <a href="javascript:;" data-lng="pt">
-                      <img src="assets/images/flags/PORTO.jpg" alt=""> Portuguese
-                    </a>
-                  </li>
-                  <li>
-                    <a href="javascript:;" data-lng="fr">
-                      <img src="assets/images/flags/FRANCE.jpg" alt=""> French
-                    </a>
-                  </li>
-                </ul>
-              </li>-->
+              
               <li class="header-notification">
                 <a href="javascript:;">
                   <i class="ti-bell"></i>
@@ -344,34 +306,11 @@
 
     <div class="pcoded-main-container" [style.margin-top]="headerFixedMargin">
       <div class="pcoded-wrapper">
-        <nav id="main_navbar" class=" pcoded-navbar" (clickOutside)="onClickedOutside($event)" [exclude]="'#mobile-collapse'" [attr.pcoded-header-position]="pcodedHeaderPosition" [attr.navbar-theme]="navBarTheme" [attr.active-item-theme]="activeItemTheme" sub-item-theme="theme2" active-item-style="style0" [attr.pcoded-navbar-position]="pcodedSidebarPosition">
+        <!--<nav id="main_navbar" class=" pcoded-navbar" (clickOutside)="onClickedOutside($event)" [exclude]="'#mobile-collapse'" [attr.pcoded-header-position]="pcodedHeaderPosition" [attr.navbar-theme]="navBarTheme" [attr.active-item-theme]="activeItemTheme" sub-item-theme="theme2" active-item-style="style0" [attr.pcoded-navbar-position]="pcodedSidebarPosition">
           <div class="sidebar_toggle"><a href="javascript:;"><i class="icon-close icons"></i></a></div>
           <div class="pcoded-inner-navbar main-menu" appAccordion>
-            <div class="">
-              <div class="main-menu-header">
-                <img class="img-40 img-radius" src="assets/images/user-profile/user-img.jpg" alt="User-Profile-Image">
-                <div class="user-details">
-                  <span>Salma Saidi</span>
-                  <span id="more-details" (click)="toggleOpenedSidebar()">Student<i class="ti-angle-down"></i></span>
-                </div>
-              </div>
-              <div class="main-menu-content">
-                <ul>
-                  <li [@mobileMenuTop]="isCollapsedSideBar" class="more-details" [ngClass]="isCollapsedSideBar">
-                    <a [routerLink]="['/user/profile']"><i class="ti-user"></i>View Profile</a>
-                    <a [routerLink]="['/crm-contact']"><i class="ti-settings"></i>Settings</a>
-                    <a [routerLink]="['/authentication/login/with-bg-image']"><i class="ti-layout-sidebar-left"></i>Logout</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="pcoded-search">
-              <span class="searchbar-toggle">  </span>
-              <div class="pcoded-search-box ">
-                <input type="text" placeholder="Search">
-                <span class="search-icon"><i class="ti-search" aria-hidden="true"></i></span>
-              </div>
-            </div>
+            
+            
             <perfect-scrollbar [style.max-width]="'100%'" [style.max-height]="'calc(100vh - 230px)'" [config]="config">
               <div *ngFor="let asideItems of menuItems.getAll()" class="d-color">
                 <div class="pcoded-navigatio-lavel" [attr.menu-title-theme]="menuTitleTheme">{{asideItems.label}}</div>
@@ -446,7 +385,7 @@
               </div>
             </perfect-scrollbar>
           </div>
-        </nav>
+        </nav>-->
         <div class="pcoded-content">
           <div class="pcoded-inner-content">
             <div class="main-body">

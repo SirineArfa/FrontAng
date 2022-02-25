@@ -67,18 +67,7 @@ const MENUITEMS = [
       },
     ],
   },
-  /*{
-    label: 'Tables',
-    main: [
-      {
-        state: 'bootstrap-table',
-        short_label: 'B',
-        name: 'Bootstrap Table',
-        type: 'link',
-        icon: 'ti-receipt'
-      }
-    ]
-  },*/
+  
   {
     label: 'Map And Extra Pages ',
     main: [
@@ -121,56 +110,7 @@ const MENUITEMS = [
   {
     label: 'Other',
     main: [
-      /*{
-        state: '',
-        short_label: 'M',
-        name: 'Menu Levels',
-        type: 'sub',
-        icon: 'ti-direction-alt',
-        children: [
-          {
-            state: '',
-            name: 'Menu Level 2.1',
-            target: true
-          }, {
-            state: '',
-            name: 'Menu Level 2.2',
-            type: 'sub',
-            children: [
-              {
-                state: '',
-                name: 'Menu Level 2.2.1',
-                target: true
-              },
-              {
-                state: '',
-                name: 'Menu Level 2.2.2',
-                target: true
-              }
-            ]
-          }, {
-            state: '',
-            name: 'Menu Level 2.3',
-            target: true
-          }, {
-            state: '',
-            name: 'Menu Level 2.4',
-            type: 'sub',
-            children: [
-              {
-                state: '',
-                name: 'Menu Level 2.4.1',
-                target: true
-              },
-              {
-                state: '',
-                name: 'Menu Level 2.4.2',
-                target: true
-              }
-            ]
-          }
-        ]
-      },*/
+      
       {
         state: 'simple-page',
         short_label: 'S',
@@ -179,20 +119,7 @@ const MENUITEMS = [
         icon: 'ti-layout-sidebar-left'
       }
     ]
-  }, /*{
-    label: 'Support',
-    main: [
-      {
-        state: 'Upgrade To Pro',
-        short_label: 'U',
-        external: 'https://codedthemes.com/item/guru-able-admin-template/',
-        name: 'Upgrade To Pro',
-        type: 'external',
-        icon: 'ti-layout-list-post',
-        target: true
-      }
-    ]
-  }*/
+  },
 ];
 
 @Injectable()

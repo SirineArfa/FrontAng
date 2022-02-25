@@ -12,6 +12,7 @@ import { Doctor4Component } from './pages/doctor4/doctor4.component';
 import { Doctor5Component } from './pages/doctor5/doctor5.component';
 import { Doctor6Component } from './pages/doctor6/doctor6.component';
 
+
 const routes: Routes = [
   {
     path: '',
@@ -21,7 +22,12 @@ const routes: Routes = [
         path: '',
         redirectTo: 'dashboard',
         pathMatch: 'full'
-      }, {
+      },
+      {
+        path: 'Home',
+        loadChildren: () => import('./pages/dashboard/dashboard-default/dashboard-default.module').then(m => m.DashboardDefaultModule)
+      },
+      {
         path: 'dashboard',
         loadChildren: () => import('./pages/dashboard/dashboard-default/dashboard-default.module').then(m => m.DashboardDefaultModule)
       }, {
