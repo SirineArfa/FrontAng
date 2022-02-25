@@ -19,6 +19,7 @@ import { Doctor3Component } from './pages/doctor3/doctor3.component';
 import { Doctor4Component } from './pages/doctor4/doctor4.component';
 import { Doctor5Component } from './pages/doctor5/doctor5.component';
 import { Doctor6Component } from './pages/doctor6/doctor6.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { Doctor6Component } from './pages/doctor6/doctor6.component';
   
   imports: [
     BrowserModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     SharedModule

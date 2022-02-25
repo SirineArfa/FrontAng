@@ -1,32 +1,37 @@
-<section class="login p-fixed d-flex text-center bg-primary common-img-bg">
+<section class="Login p-fixed d-flex text-center bg-primary common-img-bg">
   <div class="auth-fluid">
     <div class="row">
       <div class="col-sm-12">
-        <div class="login-card card-body auth-body">
-          <form class="md-float-material">
+        <div class="Login-card card-body auth-body">
+          <form #loginform="ngForm" (ngSubmit)="loginUser()">
+            <small class="danger" style="color: red;font-size: larger;">{{msg}}</small>
             <div class="text-center">
               
             </div>
             <div class="auth-box">
               <div class="row m-b-20">
                 <div class="col-md-12">
-                  <h3 class="text-left txt-primary">Log In</h3>
+                  <h3 class="text-left txt-primary">Login</h3>
                 </div>
               </div>
               <hr/>
               <div class="input-group">
-                <input type="email" class="form-control" placeholder="Your Email Address">
-                <span class="md-line"></span>
+                <input type="email" class="form-control" placeholder="Your Email Address" name="email" [(ngModel)]="user.emailId" required #email="ngModel"
+                [class.is-invalid]="email.invalid && email.touched" email="true">
+                <span class="md-line"></span><br>
+                
               </div>
+             
               <div class="input-group">
-                <input type="password" class="form-control" placeholder="Password">
+                <input type="password" class="form-control" placeholder="Password" name="pwd" [(ngModel)]="user.password" #password="ngModel"
+                [class.is-invalid]="password.invalid && password.touched">
                 <span class="md-line"></span>
               </div>
               <div class="row m-t-25 text-left">
                 <div class="col-sm-7 col-xs-12">
                   <div class="checkbox-fade fade-in-primary">
                     <label>
-                      <input type="checkbox" value="">
+                      <input type="checkbox" name="remember">
                       <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
                       <span class="text-inverse">Remember me</span>
                     </label>
@@ -38,14 +43,14 @@
               </div>
               <div class="row m-t-30">
                 <div class="col-md-12">
-                  <button type="button" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Log in</button>
+                  <button [disabled]="loginform.form.invalid" type="submit" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Login</button>
                 </div>
               </div>
               <hr/>
               <div class="row">
-                <div class="col-md-10">
-                  <p class="text-inverse text-left m-b-0">Thank you and enjoy our website.</p>
-                  <p class="text-inverse text-left"><b>Your Autentification Team</b></p>
+                <div class="col-md-10"><small>
+                  <p class="text-inverse text-left m-b-0">New user ? </p>
+                  <p class="text-inverse text-left" (click)="gotoregistration()"><b>Register here</b></p></small>
                 </div>
                 <div class="col-md-2">
                   
