@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Appointement } from '../../../appointement';
 import '../../../../assets/charts/amchart/amcharts.js';
 import '../../../../assets/charts/amchart/gauge.js';
 import '../../../../assets/charts/amchart/pie.js';
@@ -7,6 +7,7 @@ import '../../../../assets/charts/amchart/serial.js';
 import '../../../../assets/charts/amchart/light.js';
 import '../../../../assets/charts/amchart/ammap.js';
 import '../../../../assets/charts/amchart/worldLow.js';
+import { HttpClient } from '@angular/common/http';
 
 declare const AmCharts: any;
 declare const $: any;
@@ -24,9 +25,11 @@ export class DashboardDefaultComponent implements OnInit {
   totalValueGraphData2 = buildChartJS('#fff', [10, 25, 35, 20, 10, 20, 15, 45, 15, 10], '#e55571', 'transparent');
   totalValueGraphOption = buildChartOption();
 
-  constructor() { }
+  appointments:Appointement[];
+  constructor(private httpClient : HttpClient) { }
 
   ngOnInit() {
+    this.getApp();
     AmCharts.makeChart('statistics-chart', {
       type: 'serial',
       marginTop: 0,
@@ -299,6 +302,15 @@ export class DashboardDefaultComponent implements OnInit {
   onTaskStatusChange(event) {
     const parentNode = (event.target.parentNode.parentNode);
     parentNode.classList.toggle('done-task');
+  }
+
+  getApp(){
+    this.httpClient.get<any>('http://localhost:8081/getapp').subscribe(
+     response => {
+       console.log(response);
+       this.appointments = response;
+     }
+    )
   }
 
 }

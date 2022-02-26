@@ -1,6 +1,8 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {animate, AUTO_STYLE, state, style, transition, trigger} from '@angular/animations';
 import {MenuItems} from '../../shared/menu-items/menu-items';
+import { HttpClient } from '@angular/common/http';
+import { Appointement } from '../../appointement';
 
 @Component({
   selector: 'app-admin',
@@ -100,8 +102,8 @@ export class AdminComponent implements OnInit {
   @ViewChild('searchFriends', /* TODO: add static flag */ {static: false}) search_friends: ElementRef;
 
   public config: any;
-
-  constructor(public menuItems: MenuItems) {
+  appointments:Appointement[];
+  constructor(public menuItems: MenuItems,private httpClient : HttpClient) {
     this.navType = 'st5';
     this.themeLayout = 'vertical';
     this.vNavigationView = 'view1';
@@ -287,6 +289,14 @@ export class AdminComponent implements OnInit {
     } else {
       this.navBarTheme = 'theme1';
     }
+  }
+  getApp(){
+    this.httpClient.get<any>('http://localhost:8081/getapp').subscribe(
+     response => {
+       console.log(response);
+       this.appointments = response;
+     }
+    )
   }
 
 }

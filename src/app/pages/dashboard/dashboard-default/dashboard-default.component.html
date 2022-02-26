@@ -400,7 +400,25 @@
 
   <div class="col-md-12 col-xl-6">
     <app-card [title]="'Your To do list'" [cardClass]="'add-task-card'" [blockClass]="'p-b-0'">
-      <div class="to-do-list">
+      <table>
+        <tbody>
+          <tr *ngFor="let appointment of appointments">
+            <td>
+              <div class="checkbox-fade fade-in-primary d-block">
+              <label class="check-task d-block">
+                <input type="checkbox" value="" (change)="onTaskStatusChange($event)">
+                <span class="cr">
+                    <i class="cr-icon icofont icofont-ui-check txt-default"></i>
+                </span>
+                <span><h6>{{appointment.fullName}} you have an appointement at {{appointment.aptDate}} {{appointment.aptHour}} <span class="label bg-c-pink m-l-10">1 Hour</span></h6>
+                </span>
+               
+              </label></div></td>
+
+          </tr>
+        </tbody>
+      </table>
+      <!-- <div class="to-do-list">
         <div class="checkbox-fade fade-in-primary d-block">
           <label class="check-task d-block">
             <input type="checkbox" value="" (change)="onTaskStatusChange($event)">
@@ -411,8 +429,8 @@
            
           </label>
         </div>
-      </div>
-      <div class="to-do-list">
+      </div> -->
+      <!-- <div class="to-do-list">
         <div class="checkbox-fade fade-in-primary d-block">
           <label class="check-task d-block">
             <input type="checkbox" value="" (change)="onTaskStatusChange($event)">
@@ -422,7 +440,7 @@
             <span><h6>Your weekly appointement with Dr Naoufel Rouached <span class="label bg-c-green m-l-10 f-10">3 hours</span></h6></span>
           </label>
         </div>
-      </div>
+      </div> -->
       <div class="to-do-list">
         <div class="checkbox-fade fade-in-primary d-block">
           <label class="check-task d-block">
@@ -448,8 +466,6 @@
           </label>
         </div>
       </div>
-      
-
     </app-card>
   </div>
 <!--editing-->
