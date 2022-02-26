@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import {NgModule, NO_ERRORS_SCHEMA} from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule }   from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { AdminComponent } from './layout/admin/admin.component';
@@ -20,7 +21,6 @@ import { Doctor4Component } from './pages/doctor4/doctor4.component';
 import { Doctor5Component } from './pages/doctor5/doctor5.component';
 import { Doctor6Component } from './pages/doctor6/doctor6.component';
 import { HttpClientModule } from '@angular/common/http';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +44,8 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   providers: [],

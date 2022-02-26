@@ -65,14 +65,8 @@ const routes: Routes = [
     ]
   },
   {
-    path: '',
-    component: PaiementComponent,
-    children: [
-      {
-        path: 'paiement',
-        loadChildren: () => import('./pages/paiement/paiement.module').then(m => m.PaiementModule)
-      }
-    ]
+    path: 'paiement',
+    component: PaiementComponent
   },
   {
     path: '',
