@@ -5,7 +5,6 @@ import { DashboardDefaultRoutingModule } from './dashboard-default-routing.modul
 import { DashboardDefaultComponent } from './dashboard-default.component';
 import {SharedModule} from '../../../shared/shared.module';
 import {ChartModule} from 'angular2-chartjs';
-
 @NgModule({
   imports: [
     CommonModule,
