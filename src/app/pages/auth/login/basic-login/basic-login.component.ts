@@ -28,6 +28,5 @@ export class BasicLoginComponent implements OnInit {
 
   gotoregistration(){
     this._router.navigate(['/authentication/registration'])
-
   }
 }
