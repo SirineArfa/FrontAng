@@ -41,6 +41,33 @@
                 <small class="text-danger" [class.d-none]="(cpassword.value==password.value) || cpassword.untouched">confirm the password</small>
                 </div>
               </div>
+              <div class="input-group">
+                <input type="text" class="form-control" name="phoneNum" placeholder="your phone number" required #phoneNum="ngModel"  [(ngModel)]="user.phoneNum"
+                [class.is-invalid]="phoneNum.invalid && phoneNum.touched">
+                <span class="md-line"></span>
+              </div>
+              <div class="input-group">
+                <select name="genderFM" class="form-control"  placeholder="gender" required #gender="ngModel"  [(ngModel)]="user.gender"
+                [class.is-invalid]="gender.invalid && gender.touched">
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
+              </select>
+                <span class="md-line"></span>
+              </div>
+              <div class="input-group">
+                <select name="maritalstatus" class="form-control" placeholder="maritalStatus" required #maritalStatus="ngModel"  [(ngModel)]="user.maritalStatus"
+                [class.is-invalid]="maritalStatus.invalid && maritalStatus.touched">
+                <option value="Single">Single</option>
+                <option value="Married">Married</option>
+                <option value="Divorced">Divorced</option>
+              </select>
+                <span class="md-line"></span>
+              </div>
+              <div class="input-group">
+                <input type="date" class="form-control" placeholder="your birthdate" name="birthdate" [(ngModel)]="user.birthDate" required #birthdate="ngModel"
+                [class.is-invalid]="birthdate.invalid && birthdate.touched">
+                <span class="md-line"></span>
+              </div>
               <div class="row m-t-25 text-left">
                 <div class="col-md-12">
                   <div class="checkbox-fade fade-in-primary">

@@ -21,6 +21,7 @@ import { Doctor4Component } from './pages/doctor4/doctor4.component';
 import { Doctor5Component } from './pages/doctor5/doctor5.component';
 import { Doctor6Component } from './pages/doctor6/doctor6.component';
 import { HttpClientModule } from '@angular/common/http';
+import { WelcomeComponent } from './pages/welcome/welcome/welcome.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +37,8 @@ import { HttpClientModule } from '@angular/common/http';
     Doctor3Component,
     Doctor4Component,
     Doctor5Component,
-    Doctor6Component
+    Doctor6Component,
+    WelcomeComponent
   ],
   
   imports: [
